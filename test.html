@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./qunit-2.24.1.js"> </script>
+    <link rel="stylesheet" href="./qunit-2.24.1.css">
+</head>
+<body>
+    <div id="qunit"></div>
+</body>
+<script>
+    function add(num1,num2){
+        return num1+num2;
+    }
+    function minus(num1,num2){
+        return num1*num2;
+    }
+    QUnit.test("function test",assert =>{
+        assert.ok(add(1,2) == 3,"测试完毕");
+        assert.ok(add(3,4) == 7,"测试完毕");
+        assert.ok(minus(3,6) == 2,"测试完毕");
+        assert.ok(minus(4,2) == 2,"测试完毕");
+    });
+</script>
+</html>
