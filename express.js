@@ -1,15 +1,16 @@
-const tape = require('tabpe');
+//导入url模块
+const url = require('url');
 
-function add(num1,num2){
-    return num1+num2;
-}
-function minus(num1,num2){
-    return num1*num2;
-}
-tape("function test",assert => {
-    assert.equal(add(1,2),3,"finished");
-    assert.equal(add(1,2),3,"finished");
-    assert.equal(minus(1,2),3,"finished");
-    assert.equal(minus(1,2),3,"finished");
-    assert.end();
-})
+//解析URL字符串并返回一个URL对象
+const urlStr1 = 'http://www.example.test:8080/index.html?username=xiaoming';
+const urlObj1 = url.parse(urlStr1);
+console.log('协议名：'+urlObj1.protocol);
+console.log('主机名：'+urlObj1.hostname);
+console.log('端口号：'+urlObj1.port);
+console.log('路径：'+urlObj1.pathname);
+console.log('查询字符串：'+urlObj1.query);
+
+//将URL对象格式化成一个URL字符串
+const urlObj2 = urlObj1;
+const urlStr2 = url.format(urlObj2);
+console.log(urlStr2);
